@@ -33,7 +33,10 @@
             <div class="logo pull-left">
                 <img src="./images/logo.png" alt="">
             </div>
-            <div class="input-group pull-right">
+            <div class="nav pull-left">
+                <a href="">首页</a><a href="">考研真题</a><a href="">考研资讯</a><a href="">考研政策</a><a href="">考研院校</a>
+            </div>
+            <div class="input-group pull-right w-260">
                 <input type="text" class="form-control" placeholder="请输入关键字">
                 <span class="input-group-btn">
                     <button class="btn" type="button"><img src="./images/icon-search.png" alt=""></button>
@@ -228,7 +231,7 @@
             </div>
         </div>
         <div class="adv">
-            <img src="./images/adv01.png" alt="">
+            <a href=""><img src="./images/adv01.png" alt=""></a>
         </div>
         <div class="modular modular-bg">
             <div class="title">
@@ -387,13 +390,58 @@
             <p>版权 重庆市惊呼教育所有</p>
         </div>
     </div>
+    <!-- 右侧悬浮菜单 -->
+    <div class="suspension-menu">
+        <div class="item item1">
+            <div class="wx"></div>
+            <p>公众号</p>
+        </div>
+        <div class="item item1">
+            <div class="xcx"></div>
+            <p>小程序</p>
+        </div>
+        <div class="item item1">
+            <div class="qq"></div>
+            <p>QQ群</p>
+        </div>
+        <div class="item" id="toTop">
+            <div class="back-top"></div>
+            <p>回顶部</p>
+        </div>
+        <div class="detail">
+            <img src="" alt="">
+            <p>扫二维码<br>关注惊呼教育</p>
+        </div>
+    </div>
     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"
-        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous">
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-    <script src="./js/bootstrap.min.js"
-        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">
+    <script src="./js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <!-- 滚动到顶部 -->
+    <script>
+        $(document).ready(function(){
+            $("#toTop").click(function() {
+                $("body,html").animate({scrollTop: 0},800);
+            })
+            $('.suspension-menu .item1').mouseenter(function(){
+                let index = $(this).index()
+                switch(index){
+                    case 0:
+                        $('.detail').css('top','0px')
+                        break
+                    case 1:
+                        $('.detail').css('top','82px')
+                        break
+                    case 2:
+                        $('.detail').css('top','164px')
+                        break
+                }
+                $('.detail').show()
+            })
+            $('.suspension-menu .item1').mouseleave(function(){
+                $('.detail').hide()
+            })
+        })
     </script>
 </body>
 
